@@ -1,553 +1,91 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lorenzen Engineering | KI im Bauwesen & Digital Twins</title>
-    <meta name="description" content="Prof. Dr.-Ing. Steven R. Lorenzen - Beratung für KI im Bauwesen, Digital Twins, BIM und Structural Health Monitoring.">
-    
-    <!-- Google Fonts: Roboto (Tech) and Playfair Display (Seriös/Akademisch) -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!doctype html>
+<html lang="de" style="scroll-behavior:smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ciBlue: '#005A8D', // Extracted from Logo E
-                        ciGreen: '#5C9643', // Extracted from Logo L
-                        ciDark: '#333333',
-                        ciGray: '#f4f6f8',
-                    },
-                    fontFamily: {
-                        sans: ['Roboto', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    backgroundImage: {
-                        'hero-pattern': "linear-gradient(to right bottom, rgba(0, 90, 141, 0.9), rgba(30, 30, 30, 0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')",
-                    }
-                }
-            }
-        }
+    <title>Lorenzen Engineering – KI-Beratung im Bauwesen</title>
+    <meta name="description" content="Prof. Dr.-Ing. Steven R. Lorenzen – Unabhängige KI-Beratung für das Bauwesen. Strategische Einordnung, Workshops und Keynotes. Sinnvoll priorisieren, wirksam umsetzen." />
+    <meta name="author" content="Prof. Dr.-Ing. Steven R. Lorenzen" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="keywords" content="KI Bauwesen, Künstliche Intelligenz Bauindustrie, KI-Beratung, AI Construction, KI Bauunternehmen, KI Strategie Bau, Digitalisierung Bauwesen, Steven Lorenzen, Lorenzen Engineering" />
+
+    <!-- Canonical URL – Domain ggf. anpassen -->
+    <link rel="canonical" href="https://lorenzen-engineering.de/" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/LE-LOGO.svg" />
+    <link rel="icon" type="image/png" sizes="180x180" href="/favicon-180.png" />
+    <link rel="apple-touch-icon" href="/favicon-180.png" />
+
+    <!-- Preload Hero-Portrait (Above the fold) -->
+    <link rel="preload" as="image" type="image/webp" href="/portrait.webp" />
+
+    <!-- Open Graph – Domain ggf. anpassen -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lorenzen-engineering.de/" />
+    <meta property="og:title" content="Lorenzen Engineering – KI-Beratung im Bauwesen" />
+    <meta property="og:description" content="Prof. Dr.-Ing. Steven R. Lorenzen – Unabhängige KI-Beratung für das Bauwesen. Strategisch einordnen, sinnvoll priorisieren, wirksam umsetzen." />
+    <meta property="og:image" content="https://lorenzen-engineering.de/portrait.jpg" />
+    <meta property="og:image:width" content="1800" />
+    <meta property="og:image:height" content="1800" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Lorenzen Engineering" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lorenzen Engineering – KI-Beratung im Bauwesen" />
+    <meta name="twitter:description" content="Prof. Dr.-Ing. Steven R. Lorenzen – Unabhängige KI-Beratung für das Bauwesen." />
+    <meta name="twitter:image" content="https://lorenzen-engineering.de/portrait.jpg" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Lorenzen Engineering",
+      "description": "Unabhängige KI-Beratung für das Bauwesen – Strategische Einordnung, Executive Workshops und Keynotes.",
+      "url": "https://lorenzen-engineering.de",
+      "logo": "https://lorenzen-engineering.de/LE-LOGO.svg",
+      "image": "https://lorenzen-engineering.de/portrait.jpg",
+      "email": "lorenzen@lorenzen-engineering.de",
+      "knowsAbout": [
+        "Künstliche Intelligenz im Bauwesen",
+        "KI-Strategie für Bauunternehmen",
+        "Digitalisierung in der Bauindustrie",
+        "Structural Health Monitoring",
+        "Konstruktiver Ingenieurbau"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Prof. Dr.-Ing. Steven R. Lorenzen",
+        "jobTitle": "Professor für Künstliche Intelligenz im Bauwesen",
+        "honorificPrefix": "Prof. Dr.-Ing.",
+        "url": "https://lorenzen-engineering.de",
+        "email": "lorenzen@lorenzen-engineering.de",
+        "knowsAbout": [
+          "Künstliche Intelligenz",
+          "Bauingenieurwesen",
+          "Structural Health Monitoring",
+          "Tragwerksplanung",
+          "Projektsteuerung"
+        ]
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Germany"
+      },
+      "serviceType": [
+        "KI-Strategieberatung",
+        "Executive Workshops",
+        "Keynotes und Fachvorträge"
+      ]
+    }
     </script>
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Custom Hexagon Styling */
-        .hexagon-bg {
-            position: absolute;
-            width: 100px;
-            height: 110px;
-            background-color: #f4f6f8;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            z-index: -1;
-            opacity: 0.5;
-        }
-        
-        .nav-scrolled {
-            background-color: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: #5C9643;
-            margin-top: 0.5rem;
-        }
-    </style>
-</head>
-<body class="text-gray-800 antialiased relative">
-
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-4 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-                <!-- CSS Logo Representation -->
-                <div class="relative h-12 w-12 flex items-center justify-center">
-                    <svg viewBox="0 0 100 115" class="h-full w-full drop-shadow-sm">
-                        <path d="M50 3 L97 28 L97 87 L50 112 L3 87 L3 28 Z" fill="none" stroke="#666" stroke-width="6"/>
-                        <text x="25" y="80" font-family="Arial, sans-serif" font-weight="bold" font-size="55" fill="#5C9643">L</text>
-                        <text x="52" y="80" font-family="Arial, sans-serif" font-weight="bold" font-size="55" fill="#005A8D">E</text>
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-xl font-serif font-bold text-gray-800 leading-none group-hover:text-ciBlue transition-colors">Lorenzen</span>
-                    <span class="text-sm text-gray-600 font-light tracking-wider">Engineering</span>
-                </div>
-            </a>
-            
-            <!-- Desktop Nav Links -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="nav-link text-gray-700 hover:text-ciBlue font-medium transition-colors cursor-pointer">Über mich</a>
-                <a href="#competence" class="nav-link text-gray-700 hover:text-ciBlue font-medium transition-colors cursor-pointer">Kompetenzen</a>
-                <a href="#services" class="nav-link text-gray-700 hover:text-ciBlue font-medium transition-colors cursor-pointer">Leistungen</a>
-                <a href="#research" class="nav-link text-gray-700 hover:text-ciBlue font-medium transition-colors cursor-pointer">Forschung</a>
-                <a href="#contact" class="nav-link px-5 py-2 bg-ciBlue text-white rounded-full hover:bg-blue-800 transition-all shadow-md transform hover:-translate-y-0.5 cursor-pointer">Kontakt</a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-gray-700 focus:outline-none p-2" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t mt-4 px-6 py-4 absolute w-full shadow-lg left-0 top-full">
-            <a href="#about" class="nav-link-mobile block py-3 text-gray-700 border-b border-gray-100">Über mich</a>
-            <a href="#competence" class="nav-link-mobile block py-3 text-gray-700 border-b border-gray-100">Kompetenzen</a>
-            <a href="#services" class="nav-link-mobile block py-3 text-gray-700 border-b border-gray-100">Leistungen</a>
-            <a href="#research" class="nav-link-mobile block py-3 text-gray-700 border-b border-gray-100">Forschung</a>
-            <a href="#contact" class="nav-link-mobile block py-3 text-ciBlue font-bold mt-2">Kontakt aufnehmen</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative h-screen min-h-[600px] bg-hero-pattern bg-cover bg-center flex items-center justify-center text-white pt-20">
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <span class="inline-block py-1 px-3 border border-ciGreen text-ciGreen rounded-full text-sm font-bold tracking-widest mb-4 bg-black/40 backdrop-blur-sm uppercase">Next Level Civil Engineering</span>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight">
-                Die Zukunft des Bauens <br> ist datengetrieben.
-            </h1>
-            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light">
-                Künstliche Intelligenz, Digital Twins und SHM für eine resiliente Infrastruktur. 
-                Wissenschaftliche Expertise von Prof. Dr.-Ing. Steven R. Lorenzen.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#services" class="nav-link px-8 py-4 bg-ciGreen hover:bg-green-700 text-white rounded text-lg font-medium transition-all shadow-lg cursor-pointer">
-                    Leistungsangebot
-                </a>
-                <a href="#about" class="nav-link px-8 py-4 bg-transparent border border-white hover:bg-white hover:text-ciBlue text-white rounded text-lg font-medium transition-all cursor-pointer">
-                    Profil ansehen
-                </a>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer nav-link" href="#about">
-            <i class="fas fa-chevron-down text-2xl text-white opacity-70"></i>
-        </div>
-    </header>
-
-    <!-- About / Hero Story Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2 relative">
-                    <!-- Placeholder for Portrait -->
-                    <div class="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden shadow-2xl">
-                        <!-- Normally an <img> tag here. Using a div with academic symbolism for demo -->
-                        <div class="absolute inset-0 bg-gray-800 flex items-center justify-center text-gray-600">
-                             <div class="text-center p-8">
-                                <i class="fas fa-user-tie text-6xl text-gray-400 mb-4"></i>
-                                <p class="text-gray-400 text-sm">Prof. Dr.-Ing. Steven R. Lorenzen</p>
-                             </div>
-                        </div>
-                        <div class="absolute -bottom-6 -right-6 w-36 h-36 bg-ciBlue rounded-lg flex items-center justify-center text-white shadow-lg p-4">
-                            <div class="text-center">
-                                <span class="block text-4xl font-bold">SHM</span>
-                                <span class="text-xs uppercase tracking-wider block mt-1">+ BIM</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Decorative Hexagon -->
-                    <div class="absolute -top-10 -left-10 w-40 h-40 border-4 border-ciGreen/20 opacity-50" style="clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"></div>
-                </div>
-                
-                <div class="lg:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6 section-title">Brückenbauer zwischen Theorie und Praxis</h2>
-                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        Das Bauwesen steht vor seiner größten Transformation. Als Professor für Künstliche Intelligenz im Bauwesen verstehe ich nicht nur die Algorithmen, sondern auch das <strong>Bauen</strong>.
-                    </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Meine akademische Laufbahn, von der Promotion im Bereich <strong>Structural Health Monitoring (SHM)</strong> bis zur Professur, war stets getrieben von einer Frage: <em>Wie können wir Bauwerke durch Daten intelligenter, sicherer und langlebiger machen?</em>
-                    </p>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
-                        Lorenzen Engineering bietet keine pauschale BIM-Beratung. Mein Fokus liegt exakt an der Schnittstelle: Die <strong>Integration von realen Messdaten in digitale Modelle</strong>. Wir schließen die Lücke zwischen dem physischen Bauwerk (SHM) und seinem digitalen Zwilling (BIM).
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="flex items-start">
-                            <i class="fas fa-university text-ciBlue mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Wissenschaftlich</h4>
-                                <p class="text-sm text-gray-500">Professur an der Frankfurt UAS & TU Darmstadt Alumnus</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-microchip text-ciGreen mt-1 mr-3"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-800">Technologisch</h4>
-                                <p class="text-sm text-gray-500">Spezialist für Sensorik-Integration & KI-Algorithmen</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Competencies / Icons -->
-    <section id="competence" class="py-16 bg-ciGray relative overflow-hidden">
-        <!-- Background Elements -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-40 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-        
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-serif font-bold text-gray-900 mb-16">Kernkompetenzen</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1: Adjusted for Local AI/Office focus -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border-b-4 border-ciBlue group">
-                    <div class="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-ciBlue group-hover:text-white transition-colors">
-                        <i class="fas fa-server text-2xl text-ciBlue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Lokale KI & On-Premise</h3>
-                    <p class="text-gray-600 text-sm">Betrieb eigener KI-Lösungen direkt im Büro für maximale Datensouveränität. Ergänzend Edge AI am Bauwerk.</p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border-b-4 border-ciGreen group">
-                    <div class="w-16 h-16 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-ciGreen group-hover:text-white transition-colors">
-                        <i class="fas fa-link text-2xl text-ciGreen group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">SHM-BIM Link</h3>
-                    <p class="text-gray-600 text-sm">Spezialisierung auf die automatisierte Übertragung von Sensordaten in BIM-Umgebungen (IFC).</p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border-b-4 border-ciBlue group">
-                    <div class="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-ciBlue group-hover:text-white transition-colors">
-                        <i class="fas fa-laptop-medical text-2xl text-ciBlue group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Drive-by Monitoring</h3>
-                    <p class="text-gray-600 text-sm">Innovative Methoden zur Zustandsüberwachung von Verkehrsinfrastruktur durch fahrende Sensoren.</p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border-b-4 border-ciGreen group">
-                    <div class="w-16 h-16 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-ciGreen group-hover:text-white transition-colors">
-                        <i class="fas fa-cogs text-2xl text-ciGreen group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Workflow Automation</h3>
-                    <p class="text-gray-600 text-sm">Implementierung effizienter Daten-Workflows zur Reduktion manueller Auswerteprozesse.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-ciBlue font-bold tracking-widest uppercase text-sm">Angebot</span>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mt-2">Zusammenarbeit & Leistungen</h2>
-                <p class="text-gray-600 mt-4">Spezialisiert auf die Verknüpfung von Messdaten und digitalen Modellen.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-3 gap-10">
-                <!-- Service 1: Beratung -->
-                <div class="flex flex-col h-full">
-                    <div class="relative h-64 rounded-t-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1581094794329-cdac82a6cc81?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Consulting" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold font-serif">Spezial-Beratung SHM & KI</h3>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-b-lg flex-grow border border-t-0 border-gray-100">
-                        <p class="text-gray-600 mb-6">Keine allgemeine BIM-Beratung, sondern gezielte Unterstützung bei der Integration intelligenter Überwachungssysteme in Ihre Projekte.</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start text-sm text-gray-700"><i class="fas fa-check text-ciGreen mr-3 mt-1"></i>Implementierung von Workflow-Standards</li>
-                            <li class="flex items-start text-sm text-gray-700"><i class="fas fa-check text-ciGreen mr-3 mt-1"></i>Setup lokaler KI-Server (Datenschutz)</li>
-                            <li class="flex items-start text-sm text-gray-700"><i class="fas fa-check text-ciGreen mr-3 mt-1"></i>Verknüpfung SHM-Daten mit BIM-Modellen</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Service 2: Schulungen -->
-                <div class="flex flex-col h-full transform lg:-translate-y-4">
-                    <div class="relative h-64 rounded-t-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Training" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-ciBlue/90 to-transparent flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold font-serif">Schulungen & Workshops</h3>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-b-lg flex-grow border border-t-0 border-gray-200 shadow-xl relative z-10">
-                        <p class="text-gray-600 mb-6">Wissenstransfer aus der aktuellen Forschung direkt in die Praxis Ihres Ingenieurbüros.</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start text-sm text-gray-700"><i class="fas fa-check text-ciBlue mr-3 mt-1"></i>KI-Grundlagen für Bauingenieure</li>
-                            <li class="flex items-start text-sm text-gray-700"><i class="fas fa-check text-ciBlue mr-3 mt-1"></i>Python im Bauwesen & Data Science</li>
-                            <li class="flex items-start text-sm text-gray-700"><i class="fas fa-check text-ciBlue mr-3 mt-1"></i>Workshops zur Sensordaten-Analyse</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Service 3: Vorträge -->
-                <div class="flex flex-col h-full">
-                    <div class="relative h-64 rounded-t-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Keynotes" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold font-serif">Vorträge & Keynotes</h3>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-b-lg flex-grow border border-t-0 border-gray-100">
-                        <p class="text-gray-600 mb-6">Fundierte Einblicke in die Zukunft des Bauwesens. Authentisch präsentiert durch eigene Forschungsergebnisse.</p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-start text-sm text-gray-700"><i class="fas fa-check text-ciGreen mr-3 mt-1"></i>Keynotes auf Fachkongressen</li>
-                            <li class="flex items-start text-sm text-gray-700"><i class="fas fa-check text-ciGreen mr-3 mt-1"></i>Impulse: "Künstliche Intelligenz am Bau"</li>
-                            <li class="flex items-start text-sm text-gray-700"><i class="fas fa-check text-ciGreen mr-3 mt-1"></i>Expertenpanels Digitalisierung</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Scientific Credibility / Research -->
-    <section id="research" class="py-20 bg-gray-900 text-white relative">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-gray-700 pb-6">
-                <div>
-                    <h2 class="text-3xl font-serif font-bold">Forschung & Publikationen</h2>
-                    <p class="text-gray-400 mt-2">Ausgewählte wissenschaftliche Beiträge & Projekte</p>
-                </div>
-                <div class="mt-4 md:mt-0">
-                    <a href="https://scholar.google.com/citations?user=U21Bn_cAAAAJ&hl=de" target="_blank" class="text-ciGreen hover:text-white transition-colors text-sm font-bold uppercase tracking-wider flex items-center">
-                        Google Scholar Profil <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="space-y-6">
-                <!-- Award Highlight -->
-                <div class="p-6 bg-gradient-to-r from-ciBlue/30 to-transparent rounded-lg border border-ciBlue/40 mb-8 flex flex-col md:flex-row items-center gap-6">
-                     <div class="p-4 bg-white/10 rounded-full">
-                        <i class="fas fa-trophy text-yellow-400 text-3xl"></i>
-                     </div>
-                     <div>
-                        <h3 class="text-xl font-bold text-white">Kurt-Ruths-Preis 2025 (TU Darmstadt)</h3>
-                        <p class="text-gray-300 mt-1">Auszeichnung für herausragende wissenschaftliche Leistungen im Bereich der Ingenieurwissenschaften, insbesondere für die Entwicklung innovativer Monitoring-Methoden.</p>
-                     </div>
-                </div>
-
-                <!-- Paper 1 -->
-                <div class="group block p-6 bg-gray-800 rounded-lg hover:bg-gray-750 transition-colors border-l-4 border-ciGreen">
-                    <div class="flex justify-between items-start flex-col md:flex-row gap-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-100 group-hover:text-ciGreen transition-colors">Digital-Twin-Based Structural Health Monitoring</h3>
-                            <p class="text-gray-400 text-sm mt-2 italic">Lorenzen et al. (MDPI)</p>
-                            <p class="text-gray-400 text-sm mt-2">Entwicklung eines Frameworks zur Integration von Sensordaten in digitale Zwillinge zur präventiven Instandhaltung (z.B. bei Deichen).</p>
-                        </div>
-                        <span class="text-gray-500 text-xs border border-gray-600 px-2 py-1 rounded whitespace-nowrap">MDPI / Systems</span>
-                    </div>
-                </div>
-
-                <!-- Paper 2 -->
-                <div class="group block p-6 bg-gray-800 rounded-lg hover:bg-gray-750 transition-colors border-l-4 border-ciBlue">
-                    <div class="flex justify-between items-start flex-col md:flex-row gap-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-100 group-hover:text-ciBlue transition-colors">Drive-by Monitoring & Virtual Axle Detection</h3>
-                            <p class="text-gray-400 text-sm mt-2 italic">Engineering Applications of Artificial Intelligence (2025)</p>
-                            <p class="text-gray-400 text-sm mt-2">Nutzung von "Object-size-driven CNNs" zur virtuellen Achserkennung basierend auf Rohdaten. Monitoring von Brücken durch fahrende Züge.</p>
-                        </div>
-                        <span class="text-gray-500 text-xs border border-gray-600 px-2 py-1 rounded whitespace-nowrap">EAAI Journal</span>
-                    </div>
-                </div>
-
-                 <!-- Paper 3 -->
-                 <div class="group block p-6 bg-gray-800 rounded-lg hover:bg-gray-750 transition-colors border-l-4 border-gray-600">
-                    <div class="flex justify-between items-start flex-col md:flex-row gap-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-gray-100 group-hover:text-gray-300 transition-colors">A review of the digital twin in the AEC sector</h3>
-                            <p class="text-gray-400 text-sm mt-2 italic">Lorenzen, S. R. et al. (Conference Paper)</p>
-                            <p class="text-gray-400 text-sm mt-2">Kritische Analyse und Klassifizierung von Digital-Twin-Anwendungen im Bauwesen.</p>
-                        </div>
-                        <span class="text-gray-500 text-xs border border-gray-600 px-2 py-1 rounded whitespace-nowrap">IABMAS / ECPPM</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto bg-ciGray rounded-2xl shadow-lg overflow-hidden flex flex-col md:flex-row">
-                <div class="md:w-5/12 bg-ciBlue text-white p-10 flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-2xl font-serif font-bold mb-6">Kontakt aufnehmen</h3>
-                        <p class="text-blue-100 mb-8">Lassen Sie uns darüber sprechen, wie wir Ihre Daten nutzbar machen.</p>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope w-6 text-center text-ciGreen"></i>
-                                <span class="ml-3 text-sm break-all">steven.lorenzen@lorenzen-engineering.de</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt w-6 text-center text-ciGreen"></i>
-                                <span class="ml-3 text-sm">Frankfurt am Main, Deutschland</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fab fa-linkedin w-6 text-center text-ciGreen"></i>
-                                <a href="#" class="ml-3 text-sm hover:text-white underline decoration-ciGreen">LinkedIn Profil</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-12">
-                        <!-- CSS Logo Small White -->
-                        <div class="flex items-center gap-2 opacity-80">
-                             <span class="font-serif font-bold">LE</span>
-                             <span class="text-xs uppercase tracking-widest border-l pl-2 border-white/50">Lorenzen Engineering</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="md:w-7/12 p-10">
-                    <form onsubmit="event.preventDefault(); alert('Vielen Dank für Ihre Nachricht. Dies ist eine Demo.');">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                                <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-ciBlue transition-colors" placeholder="Ihr Name">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                                <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-ciBlue transition-colors" placeholder="ihre@email.de">
-                            </div>
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Betreff</label>
-                            <select class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-ciBlue transition-colors bg-white">
-                                <option>Projektanfrage (SHM/BIM)</option>
-                                <option>Vortrag / Keynote</option>
-                                <option>Schulung / Workshop</option>
-                                <option>Sonstiges</option>
-                            </select>
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-gray-700 text-sm font-bold mb-2">Nachricht</label>
-                            <textarea class="w-full px-4 py-2 border border-gray-300 rounded h-32 focus:outline-none focus:border-ciBlue transition-colors" placeholder="Wie kann ich Sie unterstützen?"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-gray-900 text-white font-bold py-3 px-4 rounded hover:bg-ciGreen transition-colors duration-300">
-                            Nachricht senden
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <span class="text-xl font-serif font-bold text-white">Lorenzen Engineering</span>
-                    <p class="text-sm mt-2">Innovationsführerschaft im digitalen Bauwesen.</p>
-                </div>
-                <div class="flex space-x-6 text-sm">
-                    <a href="#" onclick="document.getElementById('impressum-modal').classList.remove('hidden'); return false;" class="hover:text-white transition-colors">Impressum</a>
-                    <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
-                </div>
-            </div>
-            <div class="mt-8 text-center md:text-left text-xs text-gray-600">
-                &copy; 2024 Lorenzen Engineering. Alle Rechte vorbehalten.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Impressum Modal -->
-    <div id="impressum-modal" class="hidden fixed inset-0 z-[60] overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true" onclick="document.getElementById('impressum-modal').classList.add('hidden')"></div>
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="mt-3 text-left">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Impressum</h3>
-                        <div class="mt-4 text-sm text-gray-600 space-y-2">
-                            <p class="font-bold">Angaben gemäß § 5 TMG</p>
-                            <p>Lorenzen Engineering<br>
-                            Prof. Dr.-Ing. Steven R. Lorenzen</p>
-                            <p>Musterstraße 1<br>
-                            60318 Frankfurt am Main<br>
-                            Deutschland</p>
-                            
-                            <p class="mt-4 font-bold">Kontakt</p>
-                            <p>Telefon: +49 (0) 69 12345678<br>
-                            E-Mail: steven.lorenzen@lorenzen-engineering.de</p>
-                            
-                            <p class="mt-4 font-bold">Berufsbezeichnung</p>
-                            <p>Professor für Künstliche Intelligenz im Bauwesen<br>
-                            Beratender Ingenieur</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="document.getElementById('impressum-modal').classList.add('hidden')">
-                        Schließen
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script>
-        // Sticky Navbar Visuals
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 20) {
-                navbar.classList.add('nav-scrolled');
-            } else {
-                navbar.classList.remove('nav-scrolled');
-            }
-        });
-
-        // Robust Smooth Scroll Handler for Desktop & Mobile
-        document.querySelectorAll('.nav-link, .nav-link-mobile').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    // Calculate offset based on navbar height
-                    const headerOffset = navbar.offsetHeight; 
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
-                }
-                
-                // Close mobile menu if it was open
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-
-        // Mobile Menu Toggle Logic
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-    </script>
-</body>
+    <script type="module" crossorigin src="/assets/index-CwK6IQO-.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BB06YUDj.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
