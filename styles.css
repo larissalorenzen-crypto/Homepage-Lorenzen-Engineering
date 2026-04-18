@@ -620,6 +620,17 @@ section { padding: 4rem 0; position: relative; }
 }
 @media (min-width: 768px) { .profile-body p { font-size: 1.125rem; } }
 .profile-body strong { color: var(--text-dark); font-weight: 600; }
+.profile-body a {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.profile-body a:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
 .profile-badges { display: flex; flex-wrap: wrap; gap: 0.625rem; }
 .profile-badge {
   display: inline-flex;
